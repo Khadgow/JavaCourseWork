@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background: #181818; -fx-border-color: #181818;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.VideoListController">
+  <content>
+    <AnchorPane fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #181818;">
+         <children>
+             <ImageView fitHeight="114.0" fitWidth="173.0" layoutX="443.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../../Images/icon.png" />
+                 </image>
+             </ImageView>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

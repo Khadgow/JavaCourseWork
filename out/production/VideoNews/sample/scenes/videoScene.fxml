@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane prefHeight="573.0" prefWidth="1000.0" style="-fx-background-color: #181818;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.VideoController">
+   <bottom>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="1000.0" style="-fx-background-color: #181818;" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="progressBar" layoutX="10.0" layoutY="14.0" prefHeight="14.0" prefWidth="972.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Slider fx:id="volumeSlider" layoutX="133.0" layoutY="51.0" />
+            <ImageView fx:id="pauseContinueButton" fitHeight="32.0" fitWidth="32.0" layoutX="24.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/WhiteIcons/pause.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="volumeIcon" fitHeight="32.0" fitWidth="32.0" layoutX="88.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/WhiteIcons/volume.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <MediaView fx:id="video" fitHeight="600.0" fitWidth="1000.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
