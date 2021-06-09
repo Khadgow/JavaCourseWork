@@ -54,8 +54,7 @@ public class RegisterController {
                 e.printStackTrace();
             }
             VideoListController videoListController = loader.getController();
-            videoListController.setServerController(serverController);
-            videoListController.setUserType("user");
+            videoListController.setVideos(serverController, "user");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             String css = this.getClass().getResource("../application.css").toExternalForm();

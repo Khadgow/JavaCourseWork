@@ -49,7 +49,7 @@
                   <Font name="Roboto Light" size="12.0" />
                </font>
             </PasswordField>
-            <Label fx:id="errorText" alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="484.0" prefHeight="83.0" prefWidth="211.0" style="-fx-alignment: center; -fx-text-alignment: center; -fx-text-fill: red;" textFill="RED" textOverrun="CLIP" wrapText="true">
+            <Label fx:id="errorText" alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="484.0" prefHeight="83.0" prefWidth="211.0" style="-fx-alignment: center; -fx-text-alignment: center; -fx-text-fill: red;" textAlignment="CENTER" textFill="RED" textOverrun="CLIP" wrapText="true">
                <font>
                   <Font name="Roboto Light" size="12.0" />
                </font>

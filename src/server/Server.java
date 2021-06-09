@@ -147,10 +147,14 @@ class NewClient extends Thread {
                         String allVideosJSON = "";
                         ResultSet allVideosResult = dbHandler.getAllVideos();
                         while (allVideosResult.next()){
-                            allVideosJSON += " " + allVideosResult.getString("title");
-                            allVideosJSON += " " + allVideosResult.getString("path");
+                            if(allVideosJSON.equals("")){
+                                allVideosJSON += allVideosResult.getString("title");
+                            } else {
+                                allVideosJSON += ";;" + allVideosResult.getString("title");
+                            }
+
+                            allVideosJSON += ";;" + allVideosResult.getString("path");
                         }
-                        allVideosJSON = allVideosJSON.trim();
                         outStream.writeUTF(allVideosJSON);
                         break;
                     case 105:
@@ -174,6 +178,17 @@ class NewClient extends Thread {
                             fileInput.close();
                             outStream.close();
                             System.out.println("After close");
+                        }
+                        break;
+                    case 106:
+                        String videoTitleToDelete = inStream.readUTF();
+                        String pathToDelete = "C:\\Users\\Khadgow\\IdeaProjects\\VideoNews\\src\\server\\videos\\" + videoTitleToDelete + ".mp4";
+                        dbHandler.deleteVideoByTitle(videoTitleToDelete);
+                        File fileToDelete = new File(pathToDelete);
+                        if (fileToDelete.delete()){
+                            outStream.writeInt(1);
+                        } else {
+                            outStream.writeInt(0);
                         }
                         break;
                     case 2:

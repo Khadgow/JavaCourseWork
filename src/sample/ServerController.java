@@ -70,11 +70,13 @@ public class ServerController {
     public String[] getAllVideos() throws IOException {
         outStream.writeInt(104);
         String result = inStream.readUTF();
-        String[] resultArr = result.split(" ");
+        String[] resultArr = result.split(";;");
         return resultArr;
     }
 
-    public void getFile(String title) throws IOException {
+
+
+    public String getFile(String title) throws IOException {
         String path = "C:\\Users\\Khadgow\\IdeaProjects\\VideoNews\\src\\sample\\cache\\" + title + ".mp4";
         File saveFile = new File(path);
 
@@ -90,6 +92,13 @@ public class ServerController {
             fileOut.close();
             reconnect();
         }
+        return path;
+    }
+
+    public int deleteVideo(String title) throws IOException {
+        outStream.writeInt(106);
+        outStream.writeUTF(title);
+        return inStream.readInt();
     }
 
     public void disconnect() throws IOException {

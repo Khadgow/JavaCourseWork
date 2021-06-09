@@ -84,12 +84,12 @@ public class AddVideoController {
                 e.printStackTrace();
             }
             VideoListController videoListController = loader.getController();
+
             try {
-                videoListController.setServerController(serverController);
+                videoListController.setVideos(serverController, "admin");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            videoListController.setUserType("admin");
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             String css = this.getClass().getResource("../application.css").toExternalForm();

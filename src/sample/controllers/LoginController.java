@@ -40,7 +40,6 @@ public class LoginController {
 
     public void login (ActionEvent event) throws IOException {
 
-        //serverController.getFile("rick");
         String username = usernameField.getText();
         String password = passwordField.getText();
         if(username.trim().equals("") || password.trim().equals("")){
@@ -57,8 +56,7 @@ public class LoginController {
                     e.printStackTrace();
                 }
                 VideoListController videoListController = loader.getController();
-                videoListController.setServerController(serverController);
-                videoListController.setUserType(result);
+                videoListController.setVideos(serverController, result);
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 String css = this.getClass().getResource("../application.css").toExternalForm();

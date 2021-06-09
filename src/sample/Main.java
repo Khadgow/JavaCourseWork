@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import sample.controllers.LoginController;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -28,11 +29,16 @@ public class Main extends Application {
         Scene scene = new Scene(root, 1000, 800);
         String css = this.getClass().getResource("./application.css").toExternalForm();
         primaryStage.setOnCloseRequest(event -> {
+            System.out.println("EXIT");
             try {
                 serverController.disconnect();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            File dir = new File("C:\\Users\\Khadgow\\IdeaProjects\\VideoNews\\src\\sample\\cache");
+            for(File file: dir.listFiles())
+                if (!file.isDirectory())
+                    file.deleteOnExit();
         });
         scene.getStylesheets().add(css);
         primaryStage.setScene(scene);
